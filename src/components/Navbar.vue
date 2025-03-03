@@ -44,10 +44,10 @@
       </router-link>
 
       <!-- #3: Ao Bea Logo
-       [!] > Convert to SVG as well instead of png < [!] -->
+       [!]  Convert to SVG as well instead of png  [!] -->
       <div class="logo-container">
         <img
-          src="/src/assets/navbar/Ao Bea_logo.png"
+          src="/src/assets/navbar/ao_bea_logo.svg"
           alt="Logo"
           class="h-14 w-auto"
         />
