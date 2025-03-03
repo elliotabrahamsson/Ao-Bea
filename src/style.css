@@ -1,5 +1,18 @@
-
-
 @import "tailwindcss";
 
+:root {
+  /* Colors: Background */
+  --bg-main: white;
+  --bg-women: #fde8e8;
+  --bg-men: #b1d3ff;
 
+  /* Colors: Bright */
+  --bright1: #ffffff;
+  --bright2: #f6f4f0;
+  --bright3: #d9cec5;
+
+  /* Colors: Dark */
+  --dark1: #000000;
+  --dark2: #73706c;
+  --dark3: #403d37;
+}
