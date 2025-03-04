@@ -1,7 +1,7 @@
 <script setup>
 import { ref, watch } from "vue";
 
-const userInput = ref("");
+const userInput = ref(null);
 
 watch(userInput, (searchResult) => {
   userInput.value = searchResult;
