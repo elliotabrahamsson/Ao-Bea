@@ -1,6 +1,10 @@
+
 <script setup></script>
+
 <template>
+  <RouterLink to="/shop">
     <div class="women">
+
         <h2>Shop Women</h2>
     </div>
     <div class="main-container">
@@ -8,13 +12,27 @@
             class="logo"
             src="/src/assets/footer/Icons/Ao-bea-icon2.png"
             alt="Ao Bea logotype"
+
         />
+      </div>
     </div>
+  </RouterLink>
+  <div class="logo">
+    <img
+      src="https://via.placeholder.com/150x50?text=Ao+Bea"
+      alt="Ao Bea logotype"
+    />
+  </div>
+  <RouterLink to="/shop">
     <div class="men">
+
         <h2>Shop Men</h2>
+
     </div>
+  </RouterLink>
 </template>
 <style scoped>
+
     .main-container {
         display: flex;
         justify-content: center;
@@ -66,5 +84,6 @@
         width: 100px;
         height: 100px;
     }
+
 
 </style>
