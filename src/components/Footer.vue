@@ -83,6 +83,7 @@
 <style scoped>
 .footer-container {
   min-width: 100%;
+  margin-bottom: 1rem;
 }
 
 .footer-icon {
