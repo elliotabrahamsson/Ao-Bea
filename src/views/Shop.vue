@@ -26,7 +26,10 @@ onMounted(() => {
 
   <p>{{ route.params.shoptype }}</p>
   <ul v-if="store">
-    <li v-for="item in makeUniqueArr(store[route.params.shoptype])">
+    <li
+      v-for="(item, index) in makeUniqueArr(store[route.params.shoptype])"
+      :key="index"
+    >
       Item name: {{ item.category }}
       <img :src="item.img" :alt="item.category" />
     </li>
