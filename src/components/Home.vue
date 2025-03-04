@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <RouterLink to="/shop">
+  <RouterLink to="/shop/womens_fashion">
     <div class="women">
       <h2>Shop Women</h2>
     </div>
@@ -14,7 +14,7 @@
     </div>
   </RouterLink>
 
-  <RouterLink to="/shop">
+  <RouterLink to="/shop/mens_fashion">
     <div class="men">
       <h2>Shop Men</h2>
     </div>

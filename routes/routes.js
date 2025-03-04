@@ -10,7 +10,7 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: "/shop",
+      path: "/shop/:shoptype",
       name: "Shop",
       component: Shop,
     },
