@@ -13,12 +13,7 @@
       />
     </div>
   </RouterLink>
-  <div class="logo">
-    <img
-      src="https://via.placeholder.com/150x50?text=Ao+Bea"
-      alt="Ao Bea logotype"
-    />
-  </div>
+
   <RouterLink to="/shop">
     <div class="men">
       <h2>Shop Men</h2>
