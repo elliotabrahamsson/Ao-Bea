@@ -1,20 +1,16 @@
-
 <script setup></script>
 
 <template>
   <RouterLink to="/shop">
     <div class="women">
-
-        <h2>Shop Women</h2>
+      <h2>Shop Women</h2>
     </div>
     <div class="main-container">
-        <img
-            class="logo"
-            src="/src/assets/footer/Icons/Ao-bea-icon2.png"
-            alt="Ao Bea logotype"
-
-        />
-      </div>
+      <img
+        class="logo"
+        src="/src/assets/footer/Icons/Ao-bea-icon2.png"
+        alt="Ao Bea logotype"
+      />
     </div>
   </RouterLink>
   <div class="logo">
@@ -25,65 +21,59 @@
   </div>
   <RouterLink to="/shop">
     <div class="men">
-
-        <h2>Shop Men</h2>
-
+      <h2>Shop Men</h2>
     </div>
   </RouterLink>
 </template>
 <style scoped>
-
-    .main-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .women,
-    .men {
-        display: flex;
-        flex-direction: column;
-        height: 40vh;
-    }
-    h2 {
-        display: flex;
-        font-size: 1.5rem;
-        font-weight: bold;
-        height: 100%;
-        align-items: center;
-        justify-content: end;
-    }
-    .women {
-        background-color: var(--bg-women);
-        background-image: url('/src/assets/main-img/arketwomen.jpg');
-        background-repeat: no-repeat;
-        background-size: 230px 300px;
-        background-position-x: 90%;
-        background-position-y: 50%;
-        text-align: left;
-        justify-content: center;
-    }
-    .women h2 {
-        margin-left: 3%;
-        justify-content: start;
-    }
-    .men {
-        background-color: var(--bg-men);
-        background-image: url('/src/assets/main-img/arketmen.jpg');
-        background-repeat: no-repeat;
-        background-size: 230px 300px;
-        background-position-x: 30px;
-        background-position-y: 40px;
-
-    }
-    .men h2{
-        margin-right:5%;
-    }
-    .logo {
-        position: absolute;
-        z-index: 2;
-        width: 100px;
-        height: 100px;
-    }
-
-
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.women,
+.men {
+  display: flex;
+  flex-direction: column;
+  height: 40vh;
+}
+h2 {
+  display: flex;
+  font-size: 1.5rem;
+  font-weight: bold;
+  height: 100%;
+  align-items: center;
+  justify-content: end;
+}
+.women {
+  background-color: var(--bg-women);
+  background-image: url("/src/assets/main-img/arketwomen.jpg");
+  background-repeat: no-repeat;
+  background-size: 230px 300px;
+  background-position-x: 90%;
+  background-position-y: 50%;
+  text-align: left;
+  justify-content: center;
+}
+.women h2 {
+  margin-left: 3%;
+  justify-content: start;
+}
+.men {
+  background-color: var(--bg-men);
+  background-image: url("/src/assets/main-img/arketmen.jpg");
+  background-repeat: no-repeat;
+  background-size: 230px 300px;
+  background-position-x: 30px;
+  background-position-y: 40px;
+}
+.men h2 {
+  margin-right: 5%;
+}
+.logo {
+  position: absolute;
+  z-index: 2;
+  width: 100px;
+  height: 100px;
+}
 </style>
