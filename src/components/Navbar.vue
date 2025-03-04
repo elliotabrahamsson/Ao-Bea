@@ -1,4 +1,13 @@
-<script setup></script>
+<script setup>
+import { RouterLink } from "vue-router";
+/* import { useSearchStore } from "../../stores/useSearchStore";
+
+const searchStore = useSearchStore();
+
+const activeSearch = () => {
+  searchStore.triggerSearch();
+}; */
+</script>
 
 <template>
   <nav
@@ -6,93 +15,78 @@
   >
     <div class="flex justify-around items-center h-20">
       <!-- #1: Home Icon -->
-      <router-link to="" class="nav-item">
+      <RouterLink to="/" class="nav-item flex flex-col items-center group">
         <img
-          src="/src/assets/navbar/navicon_home.svg"
-          alt="home"
-          class="w-7 h-7 text-gray-500 hover:text-black"
+          src="/src/assets/navbar/home_outline.svg"
+          alt="Home"
+          class="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 transition duration-300 group-hover:hidden"
         />
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M3 9.75L12 3l9 6.75V21a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 21V9.75z"
+        <img
+          src="/src/assets/navbar/home_solid.svg"
+          alt="Home"
+          class="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 transition duration-300 hidden group-hover:block"
         />
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M9 21V10.5h6V21"
-        />
-      </router-link>
+      </RouterLink>
 
       <!-- #2: Search Icon -->
-      <router-link to="" class="nav-item">
+      <RouterLink to="#" class="nav-item flex flex-col items-center group">
         <img
-          src="/src/assets/navbar/navicon_search.svg"
+          src="/src/assets/navbar/search_outline.svg"
           alt="search"
-          class="w-7 h-7 text-gray-500 hover:text-black"
+          class="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 transition duration-300 group-hover:hidden"
         />
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M3 9.75L12 3l9 6.75V21a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 21V9.75z"
-        />
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M9 21V10.5h6V21"
-        />
-      </router-link>
-
-      <!-- #3: Ao Bea Logo
-       [!]  Convert to SVG as well instead of png  [!] -->
-      <div class="logo-container">
         <img
-          src="/src/assets/navbar/ao_bea_logo.svg"
-          alt="Logo"
-          class="h-14 w-auto"
+          src="/src/assets/navbar/search_solid.svg"
+          alt="Home"
+          class="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 transition duration-300 hidden group-hover:block"
         />
-      </div>
+      </RouterLink>
+
+      <!-- #3: Ao Bea Logo -->
+      <RouterLink to="" class="nav-item">
+        <div class="logo-container">
+          <img
+            src="/src/assets/navbar/ao_bea_logo.svg"
+            alt="Logo"
+            class="h-14 w-auto"
+          />
+        </div>
+      </RouterLink>
 
       <!-- #4: Favorites Icon -->
 
-      <router-link to="" class="nav-item">
+      <RouterLink
+        to="/favorites"
+        class="nav-item flex flex-col items-center group"
+      >
         <img
-          src="/src/assets/navbar/navicon_heart.svg"
-          alt="favorites"
-          class="w-7 h-7 text-gray-500 hover:text-black"
+          src="/src/assets/navbar/heart_outline.svg"
+          alt="search"
+          class="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 transition duration-300 group-hover:hidden"
         />
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M3 9.75L12 3l9 6.75V21a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 21V9.75z"
+        <img
+          src="/src/assets/navbar/heart_solid.svg"
+          alt="Home"
+          class="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 transition duration-300 hidden group-hover:block"
         />
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M9 21V10.5h6V21"
-        />
-      </router-link>
+      </RouterLink>
 
-      <!-- #5: User Icon -->
-      <router-link to="" class="nav-item">
+      <RouterLink to="/user" class="nav-item flex flex-col items-center group">
         <img
-          src="/src/assets/navbar/navicon_user.svg"
-          alt="user"
-          class="w-7 h-7 text-gray-500 hover:text-black"
+          src="/src/assets/navbar/user_outline.svg"
+          alt="search"
+          class="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 transition duration-300 group-hover:hidden"
         />
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M3 9.75L12 3l9 6.75V21a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 21V9.75z"
+        <img
+          src="/src/assets/navbar/user_solid.svg"
+          alt="Home"
+          class="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 transition duration-300 hidden group-hover:block"
         />
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M9 21V10.5h6V21"
-        />
-      </router-link>
+      </RouterLink>
     </div>
   </nav>
 </template>
 
 <style scoped></style>
+
+<!-- Added Shop view and implemented search functionality with Pinia store (useSearchStore) and Navbar + SearchbarComp. Also updated Navbar icons. 2025-03-03 -->

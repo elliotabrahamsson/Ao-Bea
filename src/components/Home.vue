@@ -1,32 +1,35 @@
-<script setup></script>
+<script setup>
+import { RouterLink } from "vue-router";
+</script>
 <template>
-  <div class="women">
-    <h2>Shop Women</h2>
-    <div class="img-container">
-      <img
-        src="https://via.placeholder.com/600x400?text=Women"
-        alt="Shop Women"
-      />
+  <RouterLink to="/shop">
+    <div class="women">
+      <h2>Shop Women</h2>
+      <div class="img-container">
+        <img
+          src="https://via.placeholder.com/600x400?text=Women"
+          alt="Shop Women"
+        />
+      </div>
     </div>
-  </div>
+  </RouterLink>
   <div class="logo">
     <img
       src="https://via.placeholder.com/150x50?text=Ao+Bea"
       alt="Ao Bea logotype"
     />
   </div>
-  <div class="men">
-    <h2>Shop Men</h2>
-    <div class="img-container">
-      <img src="https://via.placeholder.com/600x400?text=Men" alt="Shop Men" />
+  <RouterLink to="/shop">
+    <div class="men">
+      <h2>Shop Men</h2>
+      <div class="img-container">
+        <img
+          src="https://via.placeholder.com/600x400?text=Men"
+          alt="Shop Men"
+        />
+      </div>
     </div>
-  </div>
-  <div class="women">
-    <h2>Shop Women</h2>
-  </div>
-  <div class="men">
-    <h2>Shop Men</h2>
-  </div>
+  </RouterLink>
 </template>
 <style scoped>
 .women,
