@@ -32,7 +32,7 @@ onMounted(() => {
     <CategoryCard
       :category="item.category"
       :clothingImg="item.img"
-      v-for="item in makeUniqueArr(store[route.params.shoptype])"
+      v-for="(item, index) in makeUniqueArr(store[route.params.shoptype])" :key="index"
     />
   </div>
   <Footer></Footer>
