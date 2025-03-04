@@ -14,7 +14,7 @@
 
             <ul class="text-black-500 dark:text-gray-400 font-medium">
               <li class="mb-4">
-                <a href="#" class="hover:underline">Om Ao Bea</a>
+                <RouterLink to="/about" class="hover:underline">Om Ao Bea</RouterLink>
               </li>
               <li class="mb-4">
                 <a href="#" class="hover:underline">Kundtjänst</a>
