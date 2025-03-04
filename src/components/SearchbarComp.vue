@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import { useUserstore } from "../../stores/userStore.js";
 
+
 const userInput = ref("");
 const menuStatus = ref("display: none");
 const userStore = useUserstore();
@@ -10,6 +11,8 @@ const userStore = useUserstore();
   userStore.getData().mens_fashion.map((item) => item.Category)
 );
 const womensCatagories = ref(""); */
+
+
 
 const showSearchMenu = () => {
   if (menuStatus.value === "display: none") {

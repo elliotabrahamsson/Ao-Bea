@@ -5,6 +5,7 @@ import SearchbarComp from "./components/SearchbarComp.vue";
 import Home from "./components/Home.vue";
 import { useUserstore } from "../stores/userStore.js";
 import { onMounted } from "vue";
+import { RouterView } from "vue-router";
 onMounted(() => {
   userStore.getData();
 });
@@ -13,9 +14,10 @@ const userStore = useUserstore();
 
 <template>
   <SearchbarComp />
+  <RouterView />
   <Home />
-  <Navbar />
   <Footer />
+  <Navbar />
 </template>
 
 <style scoped></style>
