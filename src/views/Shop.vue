@@ -2,6 +2,10 @@
 import { useRoute } from "vue-router";
 import { useUserstore } from "../../stores/userStore";
 import { ref, onMounted } from "vue";
+import CategoryCard from "../components/CategoryCard.vue";
+import Navbar from "../components/Navbar.vue";
+import Footer from "../components/Footer.vue";
+import SearchbarComp from "../components/SearchbarComp.vue";
 
 const userStore = useUserstore();
 const route = useRoute();
@@ -22,18 +26,17 @@ onMounted(() => {
 });
 </script>
 <template>
-  <h1>Shop</h1>
-
+  <SearchbarComp></SearchbarComp>
   <p>{{ route.params.shoptype }}</p>
-  <ul v-if="store">
-    <li
-      v-for="(item, index) in makeUniqueArr(store[route.params.shoptype])"
-      :key="index"
-    >
-      Item name: {{ item.category }}
-      <img :src="item.img" :alt="item.category" />
-    </li>
-  </ul>
+  <div v-if="store" class="grid grid-cols-2">
+    <CategoryCard
+      :category="item.category"
+      :clothingImg="item.img"
+      v-for="(item, index) in makeUniqueArr(store[route.params.shoptype])" :key="index"
+    />
+  </div>
+  <Footer></Footer>
+  <Navbar></Navbar>
 </template>
 <style scoped>
 li {
