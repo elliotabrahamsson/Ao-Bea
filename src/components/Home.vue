@@ -1,69 +1,70 @@
 <script setup></script>
-
 <template>
     <div class="women">
         <h2>Shop Women</h2>
-        <div class="img-container">
-            <img
-                src="https://via.placeholder.com/600x400?text=Women"
-                alt="Shop Women"
-            />
-        </div>
     </div>
-    <div class="logo">
+    <div class="main-container">
         <img
-            src="https://via.placeholder.com/150x50?text=Ao+Bea"
+            class="logo"
+            src="/src/assets/footer/Icons/Ao-bea-icon2.png"
             alt="Ao Bea logotype"
         />
     </div>
     <div class="men">
         <h2>Shop Men</h2>
-        <div class="img-container">
-            <img
-                src="https://via.placeholder.com/600x400?text=Men"
-                alt="Shop Men"
-            />
-        </div>
     </div>
 </template>
 <style scoped>
+    .main-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .women,
     .men {
         display: flex;
         flex-direction: column;
-        height: 50vh;
-        width: 100%;
-        justify-content: center;
-        padding: 10px;
+        height: 40vh;
     }
     h2 {
+        display: flex;
         font-size: 1.5rem;
         font-weight: bold;
+        height: 100%;
+        align-items: center;
+        justify-content: end;
     }
     .women {
-        background-color: #fde8e8;
+        background-color: var(--bg-women);
+        background-image: url('/src/assets/main-img/arketwomen.jpg');
+        background-repeat: no-repeat;
+        background-size: 230px 300px;
+        background-position-x: 90%;
+        background-position-y: 50%;
         text-align: left;
+        justify-content: center;
     }
-
+    .women h2 {
+        margin-left: 3%;
+        justify-content: start;
+    }
     .men {
-        background-color: #b1d3ff;
-        text-align: right;
+        background-color: var(--bg-men);
+        background-image: url('/src/assets/main-img/arketmen.jpg');
+        background-repeat: no-repeat;
+        background-size: 230px 300px;
+        background-position-x: 30px;
+        background-position-y: 40px;
+
+    }
+    .men h2{
+        margin-right:5%;
     }
     .logo {
         position: absolute;
-        top: 60%;
-        left: 35%;
         z-index: 2;
+        width: 100px;
+        height: 100px;
     }
-    .img-container {
-        display: flex;
-        width: 50%;
-    }
-    .women .img-container {
-        margin-left: 40%;
-        justify-content: flex-end;
-    }
-    .men .img-container {
-        justify-content: flex-start;
-    }
+
 </style>
