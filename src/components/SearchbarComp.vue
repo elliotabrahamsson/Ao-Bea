@@ -1,6 +1,7 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { useUserstore } from "../../stores/userStore.js";
+import { RouterLink } from "vue-router";
 
 const userInput = ref("");
 const menuStatus = ref("display: none");
@@ -11,13 +12,13 @@ const GetShopCategories = () => {
   let mensCategories = [];
   let womensCategories = [];
 
-  userStore.data.mens_fashion.forEach((item) => {
+  userStore.data?.mens_fashion.forEach((item) => {
     if (!mensCategories.includes(item.Category)) {
       mensCategories.push(item.Category);
     }
   });
 
-  userStore.data.womens_fashion.forEach((item) => {
+  userStore.data?.womens_fashion.forEach((item) => {
     if (!womensCategories.includes(item.Category)) {
       womensCategories.push(item.Category);
     }
@@ -30,8 +31,22 @@ const GetShopCategories = () => {
   // console.log(shopCategoriesArr);
 };
 
+const shopCategories = ref(null);
+
+const filterSearchInput = (input) => {
+  if (input === "") {
+    shopCategories.value = GetShopCategories();
+  }
+  // console.log("Körs");
+  shopCategories.value.forEach((arr, index) => {
+    shopCategories.value[index] = arr.filter((category) =>
+      category.toLowerCase().includes(input.toLowerCase())
+    );
+  });
+};
+
 const showSearchMenu = () => {
-  console.log(GetShopCategories());
+  shopCategories.value = GetShopCategories();
   if (menuStatus.value === "display: none") {
     menuStatus.value = "";
   } else {
@@ -53,13 +68,34 @@ const showSearchMenu = () => {
         placeholder="Search for products..."
         class="w-full"
         v-model="userInput"
+        @keyup="filterSearchInput(userInput)"
         @click="showSearchMenu"
       />
       <!-- <p>Search icon</p> -->
       <img src="../assets/Searchbar/magnifyingglas.png" alt="Magnifying glas" />
     </div>
-    <div>
-      <h1 :style="menuStatus">Menu</h1>
+    <div id="searchOptions" :style="menuStatus">
+      <ul v-if="shopCategories">
+        <h4>Men's fashion</h4>
+        <p v-if="shopCategories[0].length === 0">
+          No matching categories found
+        </p>
+        <li v-for="category in shopCategories[0]">
+          <!-- Ska bytas ut till rätt path -->
+          <RouterLink to="/about">{{ category }}</RouterLink>
+        </li>
+      </ul>
+
+      <ul v-if="shopCategories">
+        <h4>Women's fashion</h4>
+        <p v-if="shopCategories[1].length === 0">
+          No matching categories found
+        </p>
+        <li v-for="category in shopCategories[1]">
+          <!-- Ska bytas ut till rätt path -->
+          <RouterLink to="/about">{{ category }}</RouterLink>
+        </li>
+      </ul>
     </div>
   </section>
   <!-- Detta byts ut mot sortering av fetch -->
@@ -67,6 +103,10 @@ const showSearchMenu = () => {
 </template>
 
 <style scoped>
+#searchOptions {
+  display: flex;
+}
+
 div {
   background-color: var(--dark3);
 }
