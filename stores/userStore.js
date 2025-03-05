@@ -30,3 +30,20 @@ export const useUserstore = defineStore("data", () => {
 
   return { data, getData, uniqueProductsByCategory };
 });
+
+export const useUniqueArr = defineStore("uniqueArr", () => {
+  const makeUniqueArr = (arr) => {
+    let uniqueArray = [];
+    arr.forEach((item) => {
+      if (!uniqueArray.find((obj) => obj.category === item.Category)) {
+        uniqueArray.push({
+          category: `${item.Category}`,
+          img: `${item.Image}`,
+        });
+      }
+    });
+    return uniqueArray;
+  };
+
+  return { makeUniqueArr };
+});

@@ -1,38 +1,40 @@
 <script setup>
 import { useRoute } from "vue-router";
 import { useUserstore } from "../../stores/userStore";
+import { useUniqueArr } from "../../stores/userStore";
+import { computed } from "vue";
 import { ref, onMounted } from "vue";
 import CategoryCard from "../components/CategoryCard.vue";
 import Navbar from "../components/Navbar.vue";
 import Footer from "../components/Footer.vue";
 import SearchbarComp from "../components/SearchbarComp.vue";
+import { storeToRefs } from "pinia";
 
 const userStore = useUserstore();
+const { data } = storeToRefs(userStore);
+const uniqueArr = useUniqueArr();
 const route = useRoute();
+
 const store = ref(null);
 
-const makeUniqueArr = (arr) => {
-  let uniqueArray = [];
-  arr.forEach((item) => {
-    if (!uniqueArray.find((obj) => obj.category === item.Category)) {
-      uniqueArray.push({ category: `${item.Category}`, img: `${item.Image}` });
-    }
-  });
-  return uniqueArray;
-};
-
 onMounted(() => {
-  store.value = userStore.data;
+  store.value = data.value;
+});
+
+const filteredCategories = computed(() => {
+  if (!store.value || !store.value[route.params.shoptype]) return [];
+  return uniqueArr.makeUniqueArr(store.value[route.params.shoptype]);
 });
 </script>
 <template>
   <SearchbarComp></SearchbarComp>
   <p>{{ route.params.shoptype }}</p>
-  <div v-if="store" class="grid grid-cols-2">
+  <div v-if="filteredCategories.length" class="grid grid-cols-2">
     <CategoryCard
+      v-for="(item, index) in filteredCategories"
+      :key="index"
       :category="item.category"
       :clothingImg="item.img"
-      v-for="(item, index) in makeUniqueArr(store[route.params.shoptype])" :key="index"
     />
   </div>
   <Footer></Footer>
