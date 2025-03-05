@@ -18,8 +18,10 @@ const props = defineProps({
 
 <style scoped>
 #card {
-  width: 207px;
-  height: 257px;
+  min-width: 190px;
+  min-height: 240px;
+
+  margin: 1em;
 
   color: white;
   position: relative;
@@ -49,7 +51,8 @@ div {
 }
 
 h3 {
+  font-size: 20px;
   background-color: var(--dark3);
-  padding: 0.3em;
+  padding: 0.4em;
 }
 </style>

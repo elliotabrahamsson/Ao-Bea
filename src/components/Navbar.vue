@@ -11,7 +11,7 @@ const activeSearch = () => {
 
 <template>
   <nav
-    class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-400 shadow-md"
+    class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-400 shadow-md z-10"
   >
     <div class="flex justify-around items-center h-20">
       <!-- #1: Home Icon -->

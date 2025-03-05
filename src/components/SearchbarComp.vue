@@ -2,30 +2,45 @@
 import { ref } from "vue";
 import { useUserstore } from "../../stores/userStore.js";
 
-
 const userInput = ref("");
 const menuStatus = ref("display: none");
 const userStore = useUserstore();
-// Gör så att den hanterar om userStore är undefined.
-/* const mensCatagories = ref(
-  userStore.getData().mens_fashion.map((item) => item.Category)
-);
-const womensCatagories = ref(""); */
 
+const GetShopCategories = () => {
+  let shopCategoriesArr = [];
+  let mensCategories = [];
+  let womensCategories = [];
 
+  userStore.data.mens_fashion.forEach((item) => {
+    if (!mensCategories.includes(item.Category)) {
+      mensCategories.push(item.Category);
+    }
+  });
+
+  userStore.data.womens_fashion.forEach((item) => {
+    if (!womensCategories.includes(item.Category)) {
+      womensCategories.push(item.Category);
+    }
+  });
+
+  shopCategoriesArr.push(mensCategories);
+  shopCategoriesArr.push(womensCategories);
+
+  return shopCategoriesArr;
+  // console.log(shopCategoriesArr);
+};
 
 const showSearchMenu = () => {
+  console.log(GetShopCategories());
   if (menuStatus.value === "display: none") {
     menuStatus.value = "";
   } else {
     menuStatus.value = "display: none";
   }
 };
-// const filterCatagories = () => {};
 </script>
 
 <template>
-  <!-- {{ mensCatagories }} -->
   <section
     class="flex justify-center items-center flex-col w-full text-white p-4"
   >
