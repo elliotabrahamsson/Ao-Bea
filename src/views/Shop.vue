@@ -42,6 +42,7 @@ onMounted(() => {
 </template>
 <style scoped>
 h1 {
+  margin: 0.7em;
   text-align: center;
 }
 li {
