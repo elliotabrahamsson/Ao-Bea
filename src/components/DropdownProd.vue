@@ -26,14 +26,17 @@ const toggleDropdown = () => {
         />
       </div>
     </button>
-    <div v-show="isOpen" class="dropdown-content":class="{ 'open-content': isOpen }">
+    <div
+      v-show="isOpen"
+      class="dropdown-content"
+      :class="{ 'open-content': isOpen }"
+    >
+      <!-- Ersätt text med relevant produktdata -->
+      <div class="id-container">
+        <span class="id">ID </span>
+        <span class="id-no"> 1263785001 </span>
+      </div>
       <p>
-
-        <!-- Ersätt text med relevant produktdata -->
-        <div class="id-container">
-          <span class="id">ID </span>
-          <span class="id-no"> 1263785001 </span>
-        </div>
         En skjorta i bomull med knäppning. Vida ärmar och ärmslut. Lös passform.
         Modellen är 177cm och bär storlek 36.
       </p>
