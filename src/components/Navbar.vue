@@ -1,17 +1,10 @@
 <script setup>
 import { RouterLink } from "vue-router";
-/* import { useSearchStore } from "../../stores/useSearchStore";
-
-const searchStore = useSearchStore();
-
-const activeSearch = () => {
-  searchStore.triggerSearch();
-}; */
 </script>
 
 <template>
   <nav
-    class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-400 shadow-md"
+    class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-400 shadow-md z-10"
   >
     <div class="flex justify-around items-center h-20">
       <!-- #1: Home Icon -->
@@ -87,6 +80,12 @@ const activeSearch = () => {
   </nav>
 </template>
 
-<style scoped></style>
+<style scoped>
+
+
+  nav {
+    z-index: 10;
+  }
+</style>
 
 <!-- Added Shop view and implemented search functionality with Pinia store (useSearchStore) and Navbar + SearchbarComp. Also updated Navbar icons. 2025-03-03 -->
