@@ -1,12 +1,5 @@
 <script setup>
 import { RouterLink } from "vue-router";
-/* import { useSearchStore } from "../../stores/useSearchStore";
-
-const searchStore = useSearchStore();
-
-const activeSearch = () => {
-  searchStore.triggerSearch();
-}; */
 </script>
 
 <template>
