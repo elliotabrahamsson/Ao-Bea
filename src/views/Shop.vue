@@ -27,6 +27,11 @@ onMounted(() => {
 </script>
 <template>
   <SearchbarComp></SearchbarComp>
+
+  <h1 v-if="route.params.shoptype === 'mens_fashion'">Mens fashion</h1>
+  <h1 v-else>Womens fashion</h1>
+  <div v-if="store" class="grid grid-cols-2 justify-items-center">
+
   <p>{{ route.params.shoptype }}</p>
   <div v-if="route.params.shoptype === 'womens_fashion'" class="women-new-arrivals-container">
     <div class="upper-pictures-container grid grid-cols-2 justify-center">
@@ -53,16 +58,22 @@ onMounted(() => {
 
   <h2 class="text-center">CATEGORIES</h2>
   <div v-if="store" class="grid grid-cols-2 gap-2">
+
     <CategoryCard
       :category="item.category"
       :clothingImg="item.img"
-      v-for="(item, index) in makeUniqueArr(store[route.params.shoptype])" :key="index"
+      v-for="(item, index) in makeUniqueArr(store[route.params.shoptype])"
+      :key="index"
     />
   </div>
   <Footer></Footer>
   <Navbar></Navbar>
 </template>
 <style scoped>
+h1 {
+  margin: 0.7em;
+  text-align: center;
+}
 li {
   font-size: larger;
 }
