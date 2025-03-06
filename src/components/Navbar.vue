@@ -87,6 +87,12 @@ const activeSearch = () => {
   </nav>
 </template>
 
-<style scoped></style>
+<style scoped>
+
+
+  nav {
+    z-index: 10;
+  }
+</style>
 
 <!-- Added Shop view and implemented search functionality with Pinia store (useSearchStore) and Navbar + SearchbarComp. Also updated Navbar icons. 2025-03-03 -->
