@@ -1,38 +1,40 @@
 <script setup>
 import { useRoute } from "vue-router";
 import { useUserstore } from "../../stores/userStore";
+import { useUniqueArr } from "../../stores/userStore";
+import { computed } from "vue";
 import { ref, onMounted } from "vue";
 import CategoryCard from "../components/CategoryCard.vue";
 import Navbar from "../components/Navbar.vue";
 import Footer from "../components/Footer.vue";
 import SearchbarComp from "../components/SearchbarComp.vue";
+import { storeToRefs } from "pinia";
 
 const userStore = useUserstore();
+const { data } = storeToRefs(userStore);
+const uniqueArr = useUniqueArr();
 const route = useRoute();
+
 const store = ref(null);
 
-const makeUniqueArr = (arr) => {
-  let uniqueArray = [];
-  arr.forEach((item) => {
-    if (!uniqueArray.find((obj) => obj.category === item.Category)) {
-      uniqueArray.push({ category: `${item.Category}`, img: `${item.Image}` });
-    }
-  });
-  return uniqueArray;
-};
-
 onMounted(() => {
-  store.value = userStore.data;
+  store.value = data.value;
+});
+
+const filteredCategories = computed(() => {
+  if (!store.value || !store.value[route.params.shoptype]) return [];
+  return uniqueArr.makeUniqueArr(store.value[route.params.shoptype]);
 });
 </script>
 <template>
   <SearchbarComp></SearchbarComp>
 
-  <h1 v-if="route.params.shoptype === 'mens_fashion'">Mens fashion</h1>
-  <h1 v-else>Womens fashion</h1>
-  <div v-if="store" class="grid grid-cols-2 justify-items-center">
+  
 
-  <p>{{ route.params.shoptype }}</p>
+<h1 v-if="route.params.shoptype === 'mens_fashion'">Mens fashion</h1>
+  <h1 v-else>Womens fashion</h1>
+  
+
   <div v-if="route.params.shoptype === 'womens_fashion'" class="women-new-arrivals-container">
     <div class="upper-pictures-container grid grid-cols-2 justify-center">
       <img class="mx-auto shadow-md" src="/src/assets/shop-new-arrivals/women/dam1.png" alt="picture of product - new arrivals">
@@ -57,13 +59,15 @@ onMounted(() => {
   </div>
 
   <h2 class="text-center">CATEGORIES</h2>
-  <div v-if="store" class="grid grid-cols-2 gap-2">
+ 
+  
+  <div v-if="filteredCategories.length" class="grid grid-cols-2 justify-items-center">
 
     <CategoryCard
+      v-for="(item, index) in filteredCategories"
+      :key="index"
       :category="item.category"
       :clothingImg="item.img"
-      v-for="(item, index) in makeUniqueArr(store[route.params.shoptype])"
-      :key="index"
     />
   </div>
   <Footer></Footer>
