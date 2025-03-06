@@ -1,19 +1,23 @@
 <script setup>
 import { defineProps } from "vue";
+import { RouterLink } from "vue-router";
 
 const props = defineProps({
   category: String,
   clothingImg: Image,
+  shopType: String,
 });
 </script>
 
 <template>
-  <section id="card">
-    <div>
-      <h3>{{ category }}</h3>
-    </div>
-    <img :src="clothingImg" :alt="category" />
-  </section>
+  <RouterLink :to="'/shop/' + shopType + '/' + category">
+    <section id="card">
+      <div>
+        <h3>{{ category }}</h3>
+      </div>
+      <img :src="clothingImg" :alt="category" />
+    </section>
+  </RouterLink>
 </template>
 
 <style scoped>
