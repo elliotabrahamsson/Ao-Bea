@@ -10,6 +10,8 @@ import DropdownCare from "../components/DropdownCare.vue";
 import DropdownProd from "../components/DropdownProd.vue";
 import Footer from "../components/Footer.vue";
 import Navbar from "../components/Navbar.vue";
+import Carousel1 from "../components/Carousel1.vue";
+import Carousel2 from "../components/Carousel2.vue";
 
 const userStore = useUserstore();
 const { data } = storeToRefs(userStore);
@@ -23,18 +25,20 @@ onMounted(() => {
 });
 
 const products = computed(() => {
-  return data.value?.mens_fashion?.find((product) => product.ID === 2);
+  return data.value?.womens_fashion?.find((product) => product.ID === 14);
 });
 </script>
 
 <template>
   <SearchbarComp />
   <div v-if="products" class="">
-    <img :src="products.Image" :alt="products.Name" />
-    <p class="flex justify-center items-center text-center mt-2 mb-2 text-xl">
+    <div class="p-5">
+      <img :src="products.Image" :alt="products.Name" />
+    </div>
+    <h3 class="flex justify-center items-center text-center p-2 mt-2 mb-2">
       {{ products.Name }}
-    </p>
-    <div class="flex justify-center items-center gap-2 my-4">
+    </h3>
+    <div class="flex justify-center items-center gap-2 my-4 p-2">
       <p
         v-for="color in products.Colors"
         :key="color"
@@ -43,16 +47,29 @@ const products = computed(() => {
         {{ color }}
       </p>
     </div>
-    <div class="flex flex-wrap text-center justify-center items-center gap-4.5">
-      <p v-for="size in products.Size" :key="size" class="border w-[4.5rem]">
+    <div
+      class="flex flex-wrap text-center justify-center items-center gap-4.5 p-2"
+    >
+      <p
+        v-for="size in products.Size"
+        :key="size"
+        class="border w-[4.3rem] h-[29px]"
+      >
         {{ size }}
       </p>
     </div>
 
-    <CheckoutButton />
+    <div class="p-1">
+      <CheckoutButton class="rounded-[4px]" />
+    </div>
 
-    <DropdownCare :Material="products.MaterialDescription" />
-    <DropdownProd :ProductDesc="products.ProductDescription" />
+    <div class="p-4">
+      <DropdownProd :ProductDesc="products.ProductDescription" />
+      <DropdownCare :Material="products.MaterialDescription" />
+
+      <Carousel1 />
+      <Carousel2 />
+    </div>
     <Footer />
     <Navbar />
   </div>
