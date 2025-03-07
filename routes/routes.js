@@ -4,6 +4,7 @@ import Shop from "../src/views/Shop.vue";
 import AboutView from "../src/views/AboutView.vue";
 
 import ProductPageView from "../src/views/ProductPageView.vue";
+import ShoppingCartView from "../src/views/ShoppingCartView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -29,7 +30,11 @@ const router = createRouter({
       name: "Product",
       component: ProductPageView,
     },
-
+    {
+      path: "/cart",
+      name: "Cart",
+      component: ShoppingCartView,
+    },
   ],
 });
 
