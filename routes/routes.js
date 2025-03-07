@@ -4,6 +4,7 @@ import Shop from "../src/views/Shop.vue";
 import AboutView from "../src/views/AboutView.vue";
 import CategoryView from "../src/views/CategoryView.vue";
 import ProductPageView from "../src/views/ProductPageView.vue";
+import CheckoutView from "../src/views/CheckoutView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
