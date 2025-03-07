@@ -36,7 +36,7 @@ import { RouterLink } from "vue-router";
       </RouterLink>
 
       <!-- #3: Ao Bea Logo -->
-      <RouterLink to="" class="nav-item">
+      <RouterLink to="/about" class="nav-item">
         <div class="logo-container">
           <img
             src="/src/assets/navbar/ao_bea_logo.svg"
