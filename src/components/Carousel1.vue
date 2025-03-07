@@ -4,14 +4,22 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper/modules";
+import { computed, onMounted } from "vue";
+import { useUserstore } from "../../stores/userStore";
 
-// Byt ut mot product Images //
-const items = [
-  { image: "/src/assets/main-img/arketmen.jpg" },
-  { image: "/src/assets/main-img/arketwomen.jpg" },
-  { image: "/src/assets/main-img/arketmen.jpg" },
-  { image: "/src/assets/main-img/arketwomen.jpg" },
-];
+const store = useUserstore();
+
+onMounted(() => {
+  store.getData();
+});
+
+const womenProducts = computed(() => {
+  if (!store.data || !store.data.womens_fashion) return [];
+
+  return store.data.womens_fashion.slice(0, 4).map((product) => ({
+    image: product.Image || "/src/assets/main-img/arketwomen.jpg",
+  }));
+});
 </script>
 
 <template>
@@ -31,7 +39,7 @@ const items = [
       pagination
       class="swiper-container"
     >
-      <swiper-slide v-for="(item, index) in items" :key="index">
+      <swiper-slide v-for="(item, index) in womenProducts" :key="index">
         <img :src="item.image" alt="Product" class="rounded-md w-full h-auto" />
       </swiper-slide>
     </swiper>
