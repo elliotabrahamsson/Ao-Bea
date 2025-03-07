@@ -28,6 +28,7 @@ const router = createRouter({
       name: "Checkout",
       component: CheckoutView,
     },
+    {
       path: "/shop/:shoptype/:category/:id",
       name: "Product",
       component: ProductPageView,
@@ -38,7 +39,6 @@ const router = createRouter({
       name: "Category",
       component: CategoryView,
     },
-
   ],
 });
 
