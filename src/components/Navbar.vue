@@ -36,7 +36,7 @@ import { RouterLink } from "vue-router";
       </RouterLink>
 
       <!-- #3: Ao Bea Logo -->
-      <RouterLink to="" class="nav-item">
+      <RouterLink to="/" class="nav-item">
         <div class="logo-container">
           <img
             src="/src/assets/navbar/ao_bea_logo.svg"
@@ -81,11 +81,9 @@ import { RouterLink } from "vue-router";
 </template>
 
 <style scoped>
-
-
-  nav {
-    z-index: 10;
-  }
+nav {
+  z-index: 10;
+}
 </style>
 
 <!-- Added Shop view and implemented search functionality with Pinia store (useSearchStore) and Navbar + SearchbarComp. Also updated Navbar icons. 2025-03-03 -->
