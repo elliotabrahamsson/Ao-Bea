@@ -66,7 +66,7 @@ const showSearchMenu = () => {
     >
       <input
         type="text"
-        placeholder="Search for product categories..."
+        placeholder="Sök produktkategori"
         class="w-full"
         v-model="userInput"
         @click="showSearchMenu"
@@ -75,9 +75,9 @@ const showSearchMenu = () => {
     </div>
     <div id="searchOptions" :style="menuStatus">
       <div v-if="shopCategories">
-        <RouterLink to="/shop/mens_fashion"><h4>Mens fashion</h4></RouterLink>
+        <RouterLink to="/shop/mens_fashion"><h4>Herrmode</h4></RouterLink>
         <p v-if="shopCategories[0].length === 0">
-          No matching categories found
+          Inga matchande kategorier.
         </p>
         <!-- Ska bytas ut till rätt path -->
         <RouterLink
@@ -90,11 +90,11 @@ const showSearchMenu = () => {
 
       <div v-if="shopCategories">
         <RouterLink to="/shop/womens_fashion"
-          ><h4>Womens fashion</h4></RouterLink
+          ><h4>Dammode</h4></RouterLink
         >
 
         <p v-if="shopCategories[1].length === 0">
-          No matching categories found
+            Inga matchande kategorier.
         </p>
         <!-- Ska bytas ut till rätt path -->
         <RouterLink

@@ -3,7 +3,7 @@
 <template>
   <RouterLink to="/shop/womens_fashion">
     <div class="women">
-      <h2>Shop Women</h2>
+      <h2>Dammode</h2>
     </div>
     <div class="main-container">
       <img
@@ -16,7 +16,7 @@
 
   <RouterLink to="/shop/mens_fashion">
     <div class="men">
-      <h2>Shop Men</h2>
+      <h2>Herrmode</h2>
     </div>
   </RouterLink>
 </template>
@@ -63,7 +63,7 @@ h2 {
   background-position-y: 40px;
 }
 .men h2 {
-  margin-right: 5%;
+  margin-right: 0.5rem;
 }
 .logo {
   position: absolute;
