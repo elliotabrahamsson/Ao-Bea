@@ -18,6 +18,9 @@ const userStore = useUserstore();
 const { data } = storeToRefs(userStore);
 //const products = makeUniqueProducts(userStore.data?.mens_fashion, 1);
 const route = useRoute();
+const shoptype = route.params.shoptype;
+
+const id = parseInt(route.params.id);
 
 const store = ref(null);
 
@@ -26,7 +29,7 @@ onMounted(() => {
 });
 
 const products = computed(() => {
-  return data.value?.womens_fashion?.find((product) => product.ID === 14);
+  return data.value?.[shoptype]?.find((product) => product.ID === id);
 });
 
 const isOpen = ref(false);
