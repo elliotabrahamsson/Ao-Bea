@@ -12,7 +12,7 @@ const props = defineProps({
     <div>
       <h3>{{ category }}</h3>
     </div>
-    <img :src="clothingImg" :alt="category" />
+    <img class="shadow-md":src="clothingImg" :alt="category" />
   </section>
 </template>
 
