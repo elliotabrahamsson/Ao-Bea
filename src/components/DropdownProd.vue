@@ -2,6 +2,11 @@
 import { ref } from "vue";
 import arrowDown from "/src/assets/dropdown/arrow-down.svg";
 import xMark from "/src/assets/dropdown/x-mark.svg";
+import { defineProps } from "vue";
+
+const props = defineProps({
+  ProductDesc: String,
+});
 
 const isOpen = ref(false);
 const toggleDropdown = () => {
@@ -37,8 +42,7 @@ const toggleDropdown = () => {
         <span class="id-no"> 1263785001 </span>
       </div>
       <p>
-        En skjorta i bomull med knäppning. Vida ärmar och ärmslut. Lös passform.
-        Modellen är 177cm och bär storlek 36.
+        {{ ProductDesc }}
       </p>
     </div>
   </div>

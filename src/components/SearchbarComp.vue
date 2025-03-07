@@ -84,6 +84,7 @@ const showSearchMenu = () => {
           class="category"
           to="/about"
           v-for="category in shopCategories[0]"
+          :key="category"
           ><p>{{ category }}</p></RouterLink
         >
       </div>
@@ -101,8 +102,10 @@ const showSearchMenu = () => {
           class="category"
           to="/about"
           v-for="category in shopCategories[1]"
-          ><p>{{ category }}</p></RouterLink
+          :key="category"
         >
+          <p>{{ category }}</p>
+        </RouterLink>
       </div>
     </div>
   </section>
