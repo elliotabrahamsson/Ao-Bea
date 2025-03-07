@@ -6,6 +6,7 @@ import { storeToRefs } from "pinia";
 import { useRoute } from "vue-router";
 import { ref, onMounted } from "vue";
 import SearchbarComp from "../components/SearchbarComp.vue";
+import DropdownColors from "../components/DropdownColors.vue";
 import DropdownCare from "../components/DropdownCare.vue";
 import DropdownProd from "../components/DropdownProd.vue";
 import Footer from "../components/Footer.vue";
@@ -27,6 +28,11 @@ onMounted(() => {
 const products = computed(() => {
   return data.value?.womens_fashion?.find((product) => product.ID === 14);
 });
+
+const isOpen = ref(false);
+const toggleDropdown = () => {
+  isOpen.value = !isOpen.value;
+};
 </script>
 
 <template>
@@ -38,15 +44,9 @@ const products = computed(() => {
     <h3 class="flex justify-center items-center text-center p-2 mt-2 mb-2">
       {{ products.Name }}
     </h3>
-    <div class="flex justify-center items-center gap-2 my-4 p-2">
-      <p
-        v-for="color in products.Colors"
-        :key="color"
-        class="flex justify-center items-center"
-      >
-        {{ color }}
-      </p>
-    </div>
+
+    <DropdownColors :Colors="products.Colors" />
+
     <div
       class="flex flex-wrap text-center justify-center items-center gap-4.5 p-2"
     >
