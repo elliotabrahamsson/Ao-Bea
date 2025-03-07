@@ -82,7 +82,7 @@ const showSearchMenu = () => {
         <!-- Ska bytas ut till rätt path -->
         <RouterLink
           class="category"
-          to="/about"
+          :to="'/shop/mens_fashion/' + category"
           v-for="category in shopCategories[0]"
           :key="category"
           ><p>{{ category }}</p></RouterLink
@@ -100,7 +100,7 @@ const showSearchMenu = () => {
         <!-- Ska bytas ut till rätt path -->
         <RouterLink
           class="category"
-          to="/about"
+          :to="'/shop/womens_fashion/' + category"
           v-for="category in shopCategories[1]"
           :key="category"
         >
