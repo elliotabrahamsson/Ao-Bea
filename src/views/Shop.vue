@@ -29,8 +29,10 @@ const filteredCategories = computed(() => {
 <template>
   <SearchbarComp></SearchbarComp>
 
+
   <h1 v-if="route.params.shoptype === 'mens_fashion'">Mens fashion</h1>
   <h1 v-else>Womens fashion</h1>
+
 
   <div
     v-if="route.params.shoptype === 'womens_fashion'"
@@ -80,6 +82,7 @@ const filteredCategories = computed(() => {
         alt="picture of product - new arrivals"
       />
     </div>
+
     <h2 class="text-center">NEW ARRIVALS</h2>
     <div
       class="lower-pictures-container grid grid-cols-2 mb-10 gap-2 justify-center"
@@ -94,10 +97,12 @@ const filteredCategories = computed(() => {
         src="/src/assets/shop-new-arrivals/men/Men1.png"
         alt="picture of product - new arrivals"
       />
+
     </div>
   </div>
 
   <h2 class="text-center">CATEGORIES</h2>
+
 
   <div
     v-if="filteredCategories.length"
@@ -119,7 +124,20 @@ h1 {
   margin: 0.7em;
   text-align: center;
 }
+
 li {
   font-size: larger;
 }
+
+
+.upper-pictures-container img{
+  min-width: 190px;
+  min-height: 240px;
+}
+
+.lower-pictures-container img {
+  min-width: 190px;
+  min-height: 240px;
+}
+
 </style>

@@ -10,6 +10,7 @@ const props = defineProps({
 </script>
 
 <template>
+
   <RouterLink :to="'/shop/' + shopType + '/' + category">
     <section id="card">
       <div>
@@ -18,6 +19,7 @@ const props = defineProps({
       <img :src="clothingImg" :alt="category" />
     </section>
   </RouterLink>
+
 </template>
 
 <style scoped>

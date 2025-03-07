@@ -2,6 +2,11 @@
 import { ref } from "vue";
 import arrowDown from "/src/assets/dropdown/arrow-down.svg";
 import xMark from "/src/assets/dropdown/x-mark.svg";
+import { defineProps } from "vue";
+
+const props = defineProps({
+  Material: String,
+});
 
 const isOpen = ref(false);
 const toggleDropdown = () => {
@@ -34,7 +39,7 @@ const toggleDropdown = () => {
       <!-- Ersätt text med relevant produktdata -->
       <div class="product-info">
         <p><strong>Komposition:</strong></p>
-        <p>Bomull 100%</p>
+        <p>{{ Material }}</p>
 
         <p><strong>Skötselråd:</strong></p>
         <ul>
