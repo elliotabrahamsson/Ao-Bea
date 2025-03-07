@@ -3,6 +3,7 @@
     import Navbar from '../components/Navbar.vue';
     import Footer from '../components/Footer.vue';
     import SearchbarComp from '../components/SearchbarComp.vue';
+    import BreadCromb from '../components/BreadCromb.vue';
 
     import { useRoute } from 'vue-router';
 
@@ -10,6 +11,7 @@
 </script>
 <template>
     <SearchbarComp />
+    <BreadCromb />
     <div>
         <SelectedCategory
             :selectedCategory="route.params.category"
