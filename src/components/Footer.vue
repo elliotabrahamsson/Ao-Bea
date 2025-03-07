@@ -16,8 +16,9 @@
               <li class="mb-4">
                 <RouterLink to="/about" class="hover:underline">Om Ao Bea</RouterLink>
               </li>
+              <!-- Tillfälligt länkad till checkout -->
               <li class="mb-4">
-                <a href="#" class="hover:underline">Kundtjänst</a>
+                <RouterLink to="/checkout" class="hover:underline">Kundtjänst</RouterLink>
               </li>
               <li class="mb-4">
                 <a href="#" class="hover:underline">Kontakt</a>
