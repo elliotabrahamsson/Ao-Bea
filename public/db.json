@@ -219,7 +219,7 @@
     },
     {
       "ID": 14,
-      "Name": "PARK raka jeanst",
+      "Name": "PARK raka jeans",
       "Price": 790,
       "Category": "Jeans",
       "ProductDescription": "PARK i denim utan stretch har en medelhög midja, klassisk passform och raka, något avsmalnande ben från knät och nedåt. Knappgylf.",
@@ -524,7 +524,7 @@
       "Category": "Bag",
       "ProductDescription": "Toteväska i läder med plats för en bärbar dator. Den har en justerbar axelrem som är 5 centimeter bred och magnetisk stängning. Innerfack med dragkedja. Mått 35 × 32 × 13 cm. ",
       "MaterialDescription": "Läder 100%",
-      "Size": ["One Size"],
+      "Size": "One Size",
       "Gender": "Female",
       "Stock": 15,
       "Colors": ["Svart", "DarkBrown", "Brown"],
