@@ -8,21 +8,23 @@ import { computed, onMounted } from "vue";
 import { useUserstore } from "../../stores/userStore";
 
 const store = useUserstore();
+const props = defineProps({
+  category: String,
+});
 
 onMounted(() => {
   store.getData();
 });
 
-const womenProducts = computed(() => {
-  if (!store.data || !store.data.womens_fashion) return [];
+const products = computed(() => {
+  if (!store.data || !store.data[props.category]) return [];
 
-  return [...store.data.womens_fashion]
+  return [...store.data[props.category]]
     .sort(() => Math.random() - 0.5)
     .slice(0, 4)
     .map((product) => ({
       image: product.Image || "/src/assets/main-img/arketwomen.jpg",
-    }))
-    .slice(0, 4);
+    }));
 });
 </script>
 
@@ -43,7 +45,7 @@ const womenProducts = computed(() => {
       pagination
       class="swiper-container"
     >
-      <swiper-slide v-for="(item, index) in womenProducts" :key="index">
+      <swiper-slide v-for="(item, index) in products" :key="index">
         <img :src="item.image" alt="Product" class="rounded-md w-full h-auto" />
       </swiper-slide>
     </swiper>

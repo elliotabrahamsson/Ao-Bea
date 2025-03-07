@@ -70,8 +70,8 @@ const toggleDropdown = () => {
       <DropdownProd :ProductDesc="products.ProductDescription" />
       <DropdownCare :Material="products.MaterialDescription" />
 
-      <Carousel1 />
-      <Carousel2 />
+      <Carousel1 :category="shoptype" />
+      <Carousel2 :category="shoptype" />
     </div>
     <Footer />
     <Navbar />
