@@ -20,7 +20,7 @@ import Footer from "../components/Footer.vue";
       />
       <div class="productDescription">
         <h2>Dubbelknäppt kavaj i bomull</h2>
-        <p>1590 kr</p>
+        <p>1590 SEK</p>
         <p>Storlek: 36</p>
       </div>
       <div class="flex flex-col justify-between items-end w-[100%] text-2xl">
@@ -28,12 +28,28 @@ import Footer from "../components/Footer.vue";
         <p class="text-base">Ta bort</p>
       </div>
     </section>
+    <section class="mt-6">
+      <div class="flex justify-between ml-4 mr-4">
+        <p>Ordersumma</p>
+        <p>1590 SEK</p>
+      </div>
+      <div class="flex justify-between ml-4 mr-4">
+        <p>Leverans</p>
+        <p>45 SEK</p>
+      </div>
+      <div
+        class="flex justify-between ml-4 mr-4 mt-8 border-t-2 border-b-2 pt-4 pb-4 text-2xl"
+      >
+        <p>Totalsumma</p>
+        <p>1635 SEK</p>
+      </div>
+    </section>
     <RouterLink>
       <div
-        class="bg-[var(--dark3)] p-4 relative min-w-[190px] m-[1em] mt-10 h-[44px] flex justify-center items-center rounded-[4px]"
+        class="bg-[var(--dark3)] p-4 relative min-w-[190px] m-[1em] mt-20 h-[44px] flex justify-center items-center rounded-[4px]"
       >
         <h3 class="text-white whitespace-nowrap text-[10px]">
-          Lägg till i varukorg
+          Forsätt till kassan
         </h3>
       </div>
     </RouterLink>
