@@ -44,9 +44,9 @@ import Footer from "../components/Footer.vue";
         <p>1635 SEK</p>
       </div>
     </section>
-    <RouterLink>
+    <RouterLink to="/checkout">
       <div
-        class="bg-[var(--dark3)] p-4 relative min-w-[190px] m-[1em] mt-20 h-[44px] flex justify-center items-center rounded-[4px]"
+        class="bg-[var(--dark3)] p-4 relative min-w-[190px] m-[1em] mt-20 mb-10 h-[44px] flex justify-center items-center rounded-[4px]"
       >
         <h3 class="text-white whitespace-nowrap text-[10px]">
           Forsätt till kassan
