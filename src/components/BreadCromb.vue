@@ -9,6 +9,7 @@ const shop = route.params.shoptype;
 <template>
   <div class="mt-5 ml-3">
     <nav class="flex items-center" aria-label="Breadcrumb">
+
       <ol
         class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse"
       >
@@ -23,7 +24,9 @@ const shop = route.params.shoptype;
               route.path !== '/checkout' && route.path !== '/orderconfirmation'
             "
             to="/"
+
             class="inline-flex items-center text-black"
+
           >
             <svg
               class="w-3 h-3 me-2.5"
@@ -47,7 +50,9 @@ const shop = route.params.shoptype;
         >
           <div class="flex items-center">
             <svg
+
               class="w-[26px] h-[26px] text-gray-800"
+
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -72,10 +77,12 @@ const shop = route.params.shoptype;
         >
           <router-link
             :to="`/shop/${shop}`"
+
             class="inline-flex items-center text-black"
             ><div>
               <p v-if="shop === 'womens_fashion'">Dammode</p>
               <p v-else>Herrmode</p>
+
             </div>
           </router-link>
         </li>
@@ -88,6 +95,7 @@ const shop = route.params.shoptype;
           <div class="flex items-center">
             <svg
               class="w-[26px] h-[26px] text-gray-800"
+
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -104,8 +112,10 @@ const shop = route.params.shoptype;
               />
             </svg>
 
+
             <span class="inline-flex items-center ml-1 text-black">
-              <p>{{ category }}</p></span
+              <p>{{ route.params.category }}</p></span
+
             >
           </div>
         </li>
@@ -114,11 +124,13 @@ const shop = route.params.shoptype;
             v-if="
               route.path === '/checkout' || route.path === '/orderconfirmation'
             "
+
             to="/"
             class="inline-flex items-center text-black"
           >
             <svg
               class="w-[26px] h-[26px] text-gray-800"
+
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -135,8 +147,10 @@ const shop = route.params.shoptype;
               />
             </svg>
 
+
             <span class="inline-flex items-center ml-1">
               <p>Fortsätt shoppa</p></span
+
             >
           </router-link>
         </li>

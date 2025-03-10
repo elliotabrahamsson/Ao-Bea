@@ -4,7 +4,7 @@ import { computed } from "vue";
 import { useUserstore } from "../../stores/userStore";
 import { storeToRefs } from "pinia";
 import { useRoute } from "vue-router";
-import { ref, onMounted } from "vue";
+import { ref, onMounted, watch } from "vue";
 import SearchbarComp from "../components/SearchbarComp.vue";
 import DropdownColors from "../components/DropdownColors.vue";
 import DropdownCare from "../components/DropdownCare.vue";
@@ -21,7 +21,7 @@ const { data } = storeToRefs(userStore);
 const route = useRoute();
 const shoptype = route.params.shoptype;
 
-const id = parseInt(route.params.id);
+// const id = parseInt(route.params.id);
 
 const store = ref(null);
 
@@ -30,7 +30,9 @@ onMounted(() => {
 });
 
 const products = computed(() => {
-  return data.value?.[shoptype]?.find((product) => product.ID === id);
+  return data.value?.[shoptype]?.find(
+    (product) => product.ID === parseInt(route.params.id)
+  );
 });
 
 const isOpen = ref(false);
