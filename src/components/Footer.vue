@@ -2,7 +2,7 @@
 
 <template>
   <div class="footer-container">
-    <footer class="bg-white dark:bg-gray-900 mb-20">
+    <footer class="bg-white mb-20">
       <div class="mx-auto w-full max-w-screen-xl">
         <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
           <div>
@@ -12,14 +12,17 @@
               alt="brand icon"
             />
 
-            <ul class="text-black-500 dark:text-gray-400 font-medium">
+            <ul class="text-black-500 :text-gray-400 font-medium">
               <li class="mb-4">
-                <RouterLink to="/about" class="hover:underline">Om Ao Bea</RouterLink>
+                <RouterLink to="/about" class="hover:underline"
+                  >Om Ao Bea</RouterLink
+                >
               </li>
               <!-- Tillfälligt länkad till checkout -->
               <li class="mb-4">
-                <RouterLink to="/checkout" class="hover:underline">Kundtjänst</RouterLink>
+                <a href="#" class="hover:underline">Kundtjänst</a>
               </li>
+
               <li class="mb-4">
                 <a href="#" class="hover:underline">Kontakt</a>
               </li>
@@ -70,9 +73,9 @@
           </ul>
         </div>
         <div
-          class="px-4 py-6 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between"
+          class="px-4 py-6 bg-gray-100 :bg-gray-700 md:flex md:items-center md:justify-between"
         >
-          <span class="text-sm text-black-500 dark:text-gray-300 sm:text-center"
+          <span class="text-sm text-black-500 :text-gray-300 sm:text-center"
             >© 2025 <a href="">Ao Bea™</a>. All Rights Reserved.
           </span>
         </div>
@@ -106,5 +109,4 @@ footer {
 .social-media-item {
   margin: 1rem;
 }
-
 </style>
