@@ -52,7 +52,7 @@ const filteredCategories = computed(() => {
         />
       </router-link>
     </div>
-    <h2 class="text-center">NEW ARRIVALS</h2>
+    <h2 class="text-center my-4">NEW ARRIVALS</h2>
     <div
       class="lower-pictures-container grid grid-cols-2 mb-10 gap-2 justify-center"
     >
@@ -93,7 +93,7 @@ const filteredCategories = computed(() => {
       </router-link>
     </div>
 
-    <h2 class="text-center">NEW ARRIVALS</h2>
+    <h2 class="text-center my-4">NEW ARRIVALS</h2>
     <div
       class="lower-pictures-container grid grid-cols-2 mb-10 gap-2 justify-center"
     >
