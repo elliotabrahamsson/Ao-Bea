@@ -29,41 +29,47 @@ const filteredCategories = computed(() => {
 <template>
   <SearchbarComp></SearchbarComp>
 
-
   <h1 v-if="route.params.shoptype === 'mens_fashion'">Herrmode</h1>
   <h1 v-else>Dammode</h1>
-
 
   <div
     v-if="route.params.shoptype === 'womens_fashion'"
     class="women-new-arrivals-container"
   >
     <div class="upper-pictures-container grid grid-cols-2 justify-center">
-      <img
-        class="mx-auto shadow-md"
-        src="/src/assets/shop-new-arrivals/women/dam1.png"
-        alt="picture of product - new arrivals"
-      />
-      <img
-        class="mx-auto shadow-md"
-        src="/src/assets/shop-new-arrivals/women/dam2.png"
-        alt="picture of product - new arrivals"
-      />
+      <router-link to="/shop/womens_fashion/Outerwear/1">
+        <img
+          class="mx-auto shadow-md"
+          src="/src/assets/shop-new-arrivals/women/dam1.png"
+          alt="picture of product - new arrivals"
+        />
+      </router-link>
+      <router-link to="/shop/womens_fashion/Tröja/2">
+        <img
+          class="mx-auto shadow-md"
+          src="/src/assets/shop-new-arrivals/women/dam2.png"
+          alt="picture of product - new arrivals"
+        />
+      </router-link>
     </div>
     <h2 class="text-center">NEW ARRIVALS</h2>
     <div
       class="lower-pictures-container grid grid-cols-2 mb-10 gap-2 justify-center"
     >
-      <img
-        class="mx-auto shadow-md"
-        src="/src/assets/shop-new-arrivals/women/dam4.png"
-        alt="picture of product - new arrivals"
-      />
-      <img
-        class="mx-auto shadow-md"
-        src="/src/assets/shop-new-arrivals/women/dam3.png"
-        alt="picture of product - new arrivals"
-      />
+      <router-link to="/shop/womens_fashion/Tröja/4">
+        <img
+          class="mx-auto shadow-md"
+          src="/src/assets/shop-new-arrivals/women/dam4.png"
+          alt="picture of product - new arrivals"
+        />
+      </router-link>
+      <router-link to="/shop/womens_fashion/Pants/3">
+        <img
+          class="mx-auto shadow-md"
+          src="/src/assets/shop-new-arrivals/women/dam3.png"
+          alt="picture of product - new arrivals"
+        />
+      </router-link>
     </div>
   </div>
   <div
@@ -71,38 +77,44 @@ const filteredCategories = computed(() => {
     class="men-new-arrivals-container"
   >
     <div class="upper-pictures-container grid grid-cols-2 justify-center">
-      <img
-        class="mx-auto shadow-md"
-        src="/src/assets/shop-new-arrivals/men/Men3.png"
-        alt="picture of product - new arrivals"
-      />
-      <img
-        class="mx-auto shadow-md"
-        src="/src/assets/shop-new-arrivals/men/Men2.png"
-        alt="picture of product - new arrivals"
-      />
+      <router-link to="/shop/mens_fashion/Outerwear/9">
+        <img
+          class="mx-auto shadow-md"
+          src="/src/assets/shop-new-arrivals/men/Men3.png"
+          alt="picture of product - new arrivals"
+        />
+      </router-link>
+      <router-link to="/shop/mens_fashion/Tröja/6">
+        <img
+          class="mx-auto shadow-md"
+          src="/src/assets/shop-new-arrivals/men/Men2.png"
+          alt="picture of product - new arrivals"
+        />
+      </router-link>
     </div>
 
     <h2 class="text-center">NEW ARRIVALS</h2>
     <div
       class="lower-pictures-container grid grid-cols-2 mb-10 gap-2 justify-center"
     >
-      <img
-        class="mx-auto shadow-md"
-        src="/src/assets/shop-new-arrivals/men/Men4.png"
-        alt="picture of product - new arrivals"
-      />
-      <img
-        class="mx-auto shadow-md"
-        src="/src/assets/shop-new-arrivals/men/Men1.png"
-        alt="picture of product - new arrivals"
-      />
-
+      <router-link to="/shop/mens_fashion/Tröja/7">
+        <img
+          class="mx-auto shadow-md"
+          src="/src/assets/shop-new-arrivals/men/Men4.png"
+          alt="picture of product - new arrivals"
+        />
+      </router-link>
+      <router-link to="/shop/mens_fashion/Skjorta/1">
+        <img
+          class="mx-auto shadow-md"
+          src="/src/assets/shop-new-arrivals/men/Men1.png"
+          alt="picture of product - new arrivals"
+        />
+      </router-link>
     </div>
   </div>
 
   <h2 class="text-center">CATEGORIES</h2>
-
 
   <div
     v-if="filteredCategories.length"
@@ -129,8 +141,7 @@ li {
   font-size: larger;
 }
 
-
-.upper-pictures-container img{
+.upper-pictures-container img {
   min-width: 190px;
   min-height: 240px;
 }
@@ -139,5 +150,4 @@ li {
   min-width: 190px;
   min-height: 240px;
 }
-
 </style>
