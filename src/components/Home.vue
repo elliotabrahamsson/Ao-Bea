@@ -30,7 +30,7 @@
 .men {
   display: flex;
   flex-direction: column;
-  height: 40vh;
+  height: 41vh;
 }
 h2 {
   display: flex;
