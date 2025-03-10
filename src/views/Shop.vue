@@ -30,8 +30,8 @@ const filteredCategories = computed(() => {
   <SearchbarComp></SearchbarComp>
 
 
-  <h1 v-if="route.params.shoptype === 'mens_fashion'">Mens fashion</h1>
-  <h1 v-else>Womens fashion</h1>
+  <h1 v-if="route.params.shoptype === 'mens_fashion'">Herrmode</h1>
+  <h1 v-else>Dammode</h1>
 
 
   <div

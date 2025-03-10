@@ -13,6 +13,7 @@ import Footer from "../components/Footer.vue";
 import Navbar from "../components/Navbar.vue";
 import Carousel1 from "../components/Carousel1.vue";
 import Carousel2 from "../components/Carousel2.vue";
+import BreadCromb from "../components/BreadCromb.vue";
 
 const userStore = useUserstore();
 const { data } = storeToRefs(userStore);
@@ -40,6 +41,7 @@ const toggleDropdown = () => {
 
 <template>
   <SearchbarComp />
+  <BreadCromb />
   <div v-if="products" class="">
     <div class="p-5">
       <img :src="products.Image" :alt="products.Name" />
@@ -70,8 +72,8 @@ const toggleDropdown = () => {
       <DropdownProd :ProductDesc="products.ProductDescription" />
       <DropdownCare :Material="products.MaterialDescription" />
 
-      <Carousel1 />
-      <Carousel2 />
+      <Carousel1 :category="shoptype" />
+      <Carousel2 :category="shoptype" />
     </div>
     <Footer />
     <Navbar />

@@ -1,5 +1,6 @@
 <script setup>
-    import { useRoute } from 'vue-router';
+import { useRoute } from "vue-router";
+
 
     const route = useRoute();
     const category = route.params.category;
@@ -153,5 +154,6 @@
             </ol>
         </nav>
     </div>
+
 </template>
 <style scoped></style>
