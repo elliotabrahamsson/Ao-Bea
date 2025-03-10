@@ -76,9 +76,7 @@ const showSearchMenu = () => {
     <div id="searchOptions" :style="menuStatus">
       <div v-if="shopCategories">
         <RouterLink to="/shop/mens_fashion"><h4>Herrmode</h4></RouterLink>
-        <p v-if="shopCategories[0].length === 0">
-          Inga matchande kategorier.
-        </p>
+        <p v-if="shopCategories[0].length === 0">Inga matchande kategorier.</p>
         <!-- Ska bytas ut till rätt path -->
         <RouterLink
           class="category"
@@ -90,13 +88,9 @@ const showSearchMenu = () => {
       </div>
 
       <div v-if="shopCategories">
-        <RouterLink to="/shop/womens_fashion"
-          ><h4>Dammode</h4></RouterLink
-        >
+        <RouterLink to="/shop/womens_fashion"><h4>Dammode</h4></RouterLink>
 
-        <p v-if="shopCategories[1].length === 0">
-            Inga matchande kategorier.
-        </p>
+        <p v-if="shopCategories[1].length === 0">Inga matchande kategorier.</p>
         <!-- Ska bytas ut till rätt path -->
         <RouterLink
           class="category"
@@ -135,6 +129,10 @@ input {
 #searchOptions div {
   display: flex;
   flex-direction: column;
+}
+
+#searchOptions p {
+  max-width: 70%;
 }
 
 .category {

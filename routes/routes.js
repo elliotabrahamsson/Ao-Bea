@@ -1,3 +1,4 @@
+
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../src/views/HomeView.vue';
 import Shop from '../src/views/Shop.vue';
@@ -45,8 +46,14 @@ const router = createRouter({
             path: '/orderconfirmation',
             name: 'orderConfirmation',
             component: ConfirmationView
-        }
+        },
+      {
+      path: "/cart",
+      name: "Cart",
+      component: ShoppingCartView,
+    }
     ]
+
 });
 
 export default router;
