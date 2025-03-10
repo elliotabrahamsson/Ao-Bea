@@ -6,17 +6,22 @@ import { storeToRefs } from "pinia";
 import { useRoute } from "vue-router";
 import { ref, onMounted } from "vue";
 import SearchbarComp from "../components/SearchbarComp.vue";
+import DropdownColors from "../components/DropdownColors.vue";
 import DropdownCare from "../components/DropdownCare.vue";
 import DropdownProd from "../components/DropdownProd.vue";
 import Footer from "../components/Footer.vue";
 import Navbar from "../components/Navbar.vue";
 import Carousel1 from "../components/Carousel1.vue";
 import Carousel2 from "../components/Carousel2.vue";
+import BreadCromb from "../components/BreadCromb.vue";
 
 const userStore = useUserstore();
 const { data } = storeToRefs(userStore);
 //const products = makeUniqueProducts(userStore.data?.mens_fashion, 1);
 const route = useRoute();
+const shoptype = route.params.shoptype;
+
+const id = parseInt(route.params.id);
 
 const store = ref(null);
 
@@ -25,12 +30,18 @@ onMounted(() => {
 });
 
 const products = computed(() => {
-  return data.value?.womens_fashion?.find((product) => product.ID === 14);
+  return data.value?.[shoptype]?.find((product) => product.ID === id);
 });
+
+const isOpen = ref(false);
+const toggleDropdown = () => {
+  isOpen.value = !isOpen.value;
+};
 </script>
 
 <template>
   <SearchbarComp />
+  <BreadCromb />
   <div v-if="products" class="">
     <div class="p-5">
       <img :src="products.Image" :alt="products.Name" />
@@ -38,15 +49,9 @@ const products = computed(() => {
     <h3 class="flex justify-center items-center text-center p-2 mt-2 mb-2">
       {{ products.Name }}
     </h3>
-    <div class="flex justify-center items-center gap-2 my-4 p-2">
-      <p
-        v-for="color in products.Colors"
-        :key="color"
-        class="flex justify-center items-center"
-      >
-        {{ color }}
-      </p>
-    </div>
+
+    <DropdownColors :Colors="products.Colors" />
+
     <div
       class="flex flex-wrap text-center justify-center items-center gap-4.5 p-2"
     >
@@ -67,8 +72,8 @@ const products = computed(() => {
       <DropdownProd :ProductDesc="products.ProductDescription" />
       <DropdownCare :Material="products.MaterialDescription" />
 
-      <Carousel1 />
-      <Carousel2 />
+      <Carousel1 :category="shoptype" />
+      <Carousel2 :category="shoptype" />
     </div>
     <Footer />
     <Navbar />
