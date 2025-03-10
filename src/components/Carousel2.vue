@@ -24,6 +24,8 @@ const products = computed(() => {
     .slice(0, 4)
     .map((product) => ({
       image: product.Image || "/src/assets/main-img/arketwomen.jpg",
+      id: product.ID,
+      productCategory: product.Category,
     }));
 });
 </script>
@@ -46,7 +48,22 @@ const products = computed(() => {
       class="swiper-container"
     >
       <swiper-slide v-for="(item, index) in products" :key="index">
-        <img :src="item.image" alt="Product" class="rounded-md w-full h-auto" />
+        <RouterLink
+          :to="
+            '/shop/' +
+            props.category +
+            '/' +
+            item.productCategory +
+            '/' +
+            item.id
+          "
+        >
+          <img
+            :src="item.image"
+            alt="Product"
+            class="rounded-md w-full h-auto"
+          />
+        </RouterLink>
       </swiper-slide>
     </swiper>
   </div>
