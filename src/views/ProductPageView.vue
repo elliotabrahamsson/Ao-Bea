@@ -60,7 +60,7 @@ const toggleDropdown = () => {
       <p
         v-for="size in products.Size"
         :key="size"
-        class="border w-[4.3rem] h-[29px]"
+        class="border w-[4.3rem] h-[29px] p-1 min-w-max"
       >
         {{ size }}
       </p>
